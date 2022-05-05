@@ -25,6 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.addFilterAt(filter, BasicAuthenticationFilter.class)
 				.authorizeRequests()
 				.anyRequest()
-				.permitAll();
+				.permitAll()
+				.and()
+				.cors();
 	}
 }
