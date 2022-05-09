@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class UserProgressRequest {
+	private String docId;
 	private String userId;
 	private String userResult;
 	private String section;

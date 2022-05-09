@@ -20,7 +20,7 @@ public class FirebaseIdTokenValidationFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		String idToken = request.getHeader("idToken");
-
+		log.info("enter filter");
 		if (request.getHeader("idToken") == null || request.getHeader("idToken").isEmpty()){
 			log.info("token is null");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

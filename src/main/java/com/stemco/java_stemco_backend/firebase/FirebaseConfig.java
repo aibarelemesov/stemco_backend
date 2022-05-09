@@ -19,9 +19,6 @@ public class FirebaseConfig {
 	@Value("${firebase.databaseUrl}")
 	String firebaseDatabaseUrl;
 
-	@Value("firebase.storageBucketUrl")
-	String firebaseStorageUrl;
-
 	@Primary
 	@Bean
 	public FirebaseApp firebaseInit() throws IOException, FirebaseAuthException {
@@ -29,7 +26,6 @@ public class FirebaseConfig {
 				.setCredentials(GoogleCredentials.getApplicationDefault())
 				.setProjectId("stemcodb")
 				.setDatabaseUrl(firebaseDatabaseUrl)
-				.setStorageBucket("stemcodb.appspot.com")
 				.build();
 		if (FirebaseApp.getApps().isEmpty()) {
 			FirebaseApp.initializeApp(options);
